@@ -8,7 +8,7 @@ get_header(); ?>
 <?php if( get_field("intro_image") ): ?>
 	<?php $intro_background = get_field('intro_image'); ?>
 	<?php else: ?>
-	<?php $intro_background = 'none'; ?>
+	<?php $intro_background = get_template_directory_uri().'/img/team-smiling.jpg'; ?>
 <?php endif; ?>
 
 <section id="intro" class="parallax-bg" style="background-image: url(<?php echo $intro_background; ?>)">
@@ -16,7 +16,21 @@ get_header(); ?>
 	<div class="row">
 	    <div class="small-12 medium-12 large-12 columns">
 			<?php if( get_field("intro_title") ): ?>
-				<h1 class="section-title"><?php the_field('intro_title'); ?></h1>							
+				<?php
+					$intro_title = get_field("intro_title"); 
+					$intro_title_echo = '';
+					
+					$intro_title_array = explode(" ", $intro_title);
+					$word_count = count($intro_title_array);
+					for($i = 0; $i < count($intro_title_array); $i++){
+						if($i > 0 && $i < ($word_count - 1)){
+							$intro_title_echo .= '<span>'.$intro_title_array[$i].'</span> ';							
+						} else {
+							$intro_title_echo .= $intro_title_array[$i].' ';
+						}
+					}
+				?>				
+				<h1 class="section-title"><?php echo $intro_title_echo; ?></h1>							
 			<?php endif; ?>
 
 			<?php if( get_field("intro_sub_title") ): ?>
@@ -69,7 +83,7 @@ get_header(); ?>
 
 				<?php while(has_sub_field('overview_services')): ?>
 				   <div class="small-12 medium-12 large-4 columns">
-					<h3><?php the_sub_field('service_name'); ?></h3>
+					<h4 class="heading-lines"><?php the_sub_field('service_name'); ?></h4>
 					<p><?php the_sub_field('service_description'); ?></p>
 					<a href="<?php the_sub_field('service_link'); ?>" id="" class="button tiny">read more...</a>
 					
@@ -108,7 +122,7 @@ get_header(); ?>
 						</div>						
 	        			<img src="<?php the_sub_field('book_image'); ?>"  class="" id=""  alt="" />
 					</a>
-					<h5 class="text-uppercase title"><?php the_sub_field('book_title'); ?></h5>
+					<h5 class="text-uppercase title heading-lines dark-lines"><?php the_sub_field('book_title'); ?></h5>
 	        		<p class="tags"><?php the_sub_field('book_genre'); ?></p>
         	    </div><!-- end columns -->
 	        	<?php endwhile; ?> 
@@ -120,13 +134,13 @@ get_header(); ?>
 	    </div><!-- end columns -->
 	</div><!-- end row -->
 </section><!-- end section #.dark-section -->
-<?php if( get_field("intro_image") ): ?>
+<?php if( get_field("get_in_touch_background_image") ): ?>
 	<?php $intouch_background = get_field('get_in_touch_background_image'); ?>
 	<?php else: ?>
 	<?php $intouch_background = 'none'; ?>
 <?php endif; ?>
 
-<section id="" class="parallax-bg" style="background-image: url(<?php echo $intouch_background; ?>)">
+<section class="parallax-bg" style="background-image: url(<?php echo $intouch_background; ?>)">
 	<div class="overlay"></div><!-- end div.overlay -->
 	<div class="row">
 	    <div class="small-12 medium-12 large-12 columns">

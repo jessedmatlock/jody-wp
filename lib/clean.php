@@ -134,6 +134,12 @@ if( ! function_exists( 'reverie_scripts_and_styles ' ) ) {
 	    // ie-only style sheet
 	    wp_register_style( 'reverie-ie-only', get_template_directory_uri() . '/css/ie.css', array(), '' );
 
+	    // adding Google Maps scripts file in the footer
+	    wp_register_script( 'googlem-maps-js', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array( 'jquery' ), '', true );
+
+	    // adding App.js scripts file in the footer
+	    wp_register_script( 'app-js', get_template_directory_uri() . '/js/app.js', '', '', true );
+
 	    // comment reply script for threaded comments
 	    if( get_option( 'thread_comments' ) )  { wp_enqueue_script( 'comment-reply' ); }
 	    
@@ -156,8 +162,9 @@ if( ! function_exists( 'reverie_scripts_and_styles ' ) ) {
 	    and your site will load faster.
 	    */
 	    wp_enqueue_script( 'jquery' );
-		
 	    wp_enqueue_script( 'reverie-js' );
+	    wp_enqueue_script( 'googlem-maps-js' );
+	    wp_enqueue_script( 'app-js' );
 	    wp_enqueue_script( 'html5shiv' );
 
 	  }

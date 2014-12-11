@@ -1,13 +1,14 @@
 <?php get_header(); ?>
 <!-- Row for main content area -->
+<div class="row">
 	<div class="small-12 large-8 columns" id="content" role="main">
-		<?php echo 'Archive'; ?>
+		<?php // echo 'Archive'; ?>
 	
 	<?php if ( have_posts() ) : ?>
 	
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php get_template_part( 'content', 'blog' ); ?>
 		<?php endwhile; ?>
 		
 		<?php else : ?>
@@ -25,5 +26,5 @@
 
 	</div>
 	<?php get_sidebar(); ?>
-		
+</div><!-- Row End -->
 <?php get_footer(); ?>

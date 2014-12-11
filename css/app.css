@@ -1,5 +1,5 @@
 /* @override 
-	http://jodyschwartz-wp.com/wp-content/themes/jodyschwartz/css/app.css */
+	http://jodyschwartz-wp.com/wp-content/themes/jody-wp/css/app.css */
 
 meta.foundation-version {
   font-family: "/5.2.3/";
@@ -1936,25 +1936,49 @@ button:hover, button:focus, .button:hover, .button:focus {
   color: white;
 }
 .button.clear-button, button.clear-button {
-	background: rgba(250, 250, 250, 0.06);
-	border: 1px solid rgba(250, 250, 250, 0.15);
-	color: rgba(250, 250, 250, 0.9) !important;
+	background: rgba(0, 0, 0, 0.06);
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	color: rgba(0, 0, 0, 0.9) !important;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-	
 }
-.button.clear-button:hover, button.clear-button:hover,
-.button.clear-button:focus, button.clear-button:focus {
+.parallax-bg .button.clear-button, 
+.parallax-bg button.clear-button,
+.dark-section .button.clear-button, 
+.dark-section button.clear-button {
+	border: 1px solid rgba(250, 250, 250, 0.15);
+	background: rgba(250, 250, 250, 0.06);
+	color: rgba(250, 250, 250, 0.9) !important;
+}
+.button.clear-button:hover,
+button.clear-button:hover,
+.button.clear-button:focus,
+button.clear-button:focus {
+	background: rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	color: #111 !important;
+	-webkit-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0 0px 12px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0px 12px rgba(0, 0, 0, 0.25);
+}
+
+.parallax-bg .button.clear-button:hover, 
+.parallax-bg button.clear-button:hover,
+.parallax-bg .button.clear-button:focus, 
+.parallax-bg button.clear-button:focus
+.dark-section .button.clear-button:hover, 
+.dark-section button.clear-button:hover,
+.dark-section .button.clear-button:focus, 
+.dark-section button.clear-button:focus {
 	background: rgba(250, 250, 250, 0.05);
 	border: 1px solid rgba(250, 250, 250, 0.8);
 	color: #fff !important;
 	-webkit-box-shadow: 0 0px 12px rgba(250, 250, 250, 0.15);
 	-moz-box-shadow: 0 0px 12px rgba(250, 250, 250, 0.15);
 	box-shadow: 0 0px 12px rgba(250, 250, 250, 0.15);
-	
-}
 
+}
 button.secondary, .button.secondary {
   background-color: #f4f6f6;
   border-color: #e3e9e9;
@@ -5631,8 +5655,8 @@ meta.foundation-mq-topbar {
   padding: 12px 0 12px 0;
   padding-left: 15px;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: normal;
+  font-size: .9rem;
+  font-weight: bold;
   text-transform: none;
 }
 .top-bar-section ul li > a.button {

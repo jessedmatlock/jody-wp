@@ -8,15 +8,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('index-card clearfix'); ?>>
-	<header>
-		<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<?php //reverie_entry_meta(); ?>
-	</header>
 	<div class="entry-content">
 		<?php if ( has_post_thumbnail() ) : // check if the post has a Post Thumbnail assigned to it ?>
-		<figure class="alignleft"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large'); ?></a></figure> 
+		<figure><?php the_post_thumbnail('full'); ?></figure> 
 		<?php endif; ?>
-		
-		<?php the_excerpt(); ?>
+		<?php the_content(); ?>
 	</div>
 </article>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php echo 'Search'; ?>
+<?php // echo 'Search'; ?>
 
 <!-- Row for main content area -->
 <div class="row">
@@ -7,7 +7,7 @@
 		<?php if(get_search_query()): ?>
 			<h2><?php _e('Search Results for', 'reverie'); ?> "<?php echo get_search_query(); ?>"</h2>
 		<?php else: ?>
-			<h2>You may need to be more specific with your search...</h2>
+			<h2>Here are the results we found for your search...</h2>
 		<?php endif; ?>
 		
 	<?php if ( have_posts() ) : ?>
